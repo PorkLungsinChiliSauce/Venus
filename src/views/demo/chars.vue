@@ -2,7 +2,7 @@
   <div id="container" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto;"></div>
 </template>
 <script>
-  //import Highcharts from 'highcharts'
+  import Highcharts from 'highcharts'
   export default{
 
     mounted: function () {
