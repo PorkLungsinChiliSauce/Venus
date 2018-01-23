@@ -21,6 +21,15 @@ var router = new VueRouter({
   routes:routers
 });
 
+window.sourceOfTruth = {}
+window.bus=new Vue();
+
+router.beforeEach((to, from, next) => {
+  console.dir(from);
+  window.bus.$emit('change',from.name);
+  next();
+})
+
 new Vue({
   router
 }).$mount('#app');

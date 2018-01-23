@@ -7,6 +7,18 @@
           <vmenu></vmenu>
           <div id="content-wrapper">
             <div class="row">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div id="content-header" class="clearfix">
+                    <ol class="breadcrumb">
+                      <li><a href="#">首页</a></li>
+                      <li class="active"><span>{{menuText}}</span></li>
+                    </ol>
+                    <h1>Gallery</h1>
+                  </div>
+
+                </div>
+              </div>
               <div class="col-lg-12">
                   <router-view></router-view>
               </div>
@@ -34,9 +46,17 @@
       vmenu,
       vfooter
     },
+    data(){
+     return{
+       menuText:""
+     }
+    },
     mounted: function () {
       this.$nextTick(function () {
         new init();
+      })
+      window.bus.$on('change', function (id) {
+        this.menuText=id;
       })
     }
   }
